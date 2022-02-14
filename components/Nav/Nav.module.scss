@@ -1,0 +1,34 @@
+
+@use '../../styles/abstracts' as *;
+
+.nav {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+
+	.logo {
+		padding: 0.75rem;
+	}
+
+	.desktopLinks {
+		display: none;
+	
+		@media (min-width: $breakpoint-mobile) {
+			display: block;
+		}
+	}
+	
+	.mobileMenuButton {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		background-color: black;
+		border-radius: 5px;
+		width: 2.75rem;
+		height: 2.75rem;
+	
+		@media (min-width: $breakpoint-mobile) {
+			display: none;
+		}
+	}
+}
