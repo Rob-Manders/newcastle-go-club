@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import styles from './Nav.module.scss'
 import Link from 'next/link'
-import Portal from '../../HOC/Portal/Portal'
 
 export default function Nav() {
 	const [menuToggle, setMenuToggle] = useState(false)
@@ -39,11 +38,10 @@ export default function Nav() {
 			{
 				menuToggle
 				&& 
-				<Portal>
+				<div className={styles.mobileLinks}>
 					<Links />
-				</Portal>
+				</div>
 			}
-			
 		</nav>
 	)
 }
