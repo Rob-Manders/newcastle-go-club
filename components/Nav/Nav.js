@@ -39,9 +39,9 @@ export default function Nav({ page }) {
 				{
 					!menuToggle
 					?
-					<img className={styles.menuIcon} src='menu-icon.svg' />
+					<img className={styles.menuIcon} src='icons/menu-icon.svg' />
 					:
-					<img className={styles.menuIconActive}src='close-icon.svg' />
+					<img className={styles.menuIconActive}src='icons/close-icon.svg' />
 				}
 			</div>
 
