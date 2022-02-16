@@ -4,10 +4,10 @@ import DocumentHead from '../components/DocumentHead/DocumentHead'
 import Nav from '../components/Nav/Nav'
 import Footer from '../components/Footer/Footer'
 
-export default function Home() {
+export default function Contact() {
   return (
     <div className={styles.container}>
-      <DocumentHead pageTitle='Home' overrideTitle/>
+      <DocumentHead pageTitle='Contact' overrideTitle/>
 
       <Nav page='home'/>
 

@@ -2,8 +2,9 @@
 import { useState } from 'react'
 import styles from './Nav.module.scss'
 import Link from 'next/link'
+import Logo from '../Logo/Logo'
 
-export default function Nav() {
+export default function Nav({ page }) {
 	const [menuToggle, setMenuToggle] = useState(false)
 
 	function toggleMenu() {
@@ -15,8 +16,11 @@ export default function Nav() {
 	function Links() {
 		return (
 			<>
-				<Link className={styles.navLink} href="/">Home</Link>
-				<Link className={styles.navLink} href="/meetings">Meetings</Link>
+				<Link href='/'>Home</Link>
+				<Link href='/what-is-go'>What is Go?</Link>
+				<Link href='/meetings'>Meetings</Link>
+				<Link href='/about-us'>About Us</Link>
+				<Link href='/contact'>Contact</Link>
 			</>
 		)
 	}
@@ -24,7 +28,7 @@ export default function Nav() {
 	return (
 		<nav className={styles.nav}>
 			<Link href="/">
-				<img className={styles.logo} src="/NGC-Logo.svg" alt="logo"></img>
+				<Logo />
 			</Link>
 
 			<div className={styles.desktopLinks}>
@@ -32,7 +36,13 @@ export default function Nav() {
 			</div>
 
 			<div className={styles.mobileMenuButton} onClick={toggleMenu}>
-				{/* TODO: Hamburger icon. */}
+				{
+					!menuToggle
+					?
+					<img className={styles.menuIcon} src='menu-icon.svg' />
+					:
+					<img className={styles.menuIconActive}src='close-icon.svg' />
+				}
 			</div>
 
 			{
