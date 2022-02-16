@@ -2,6 +2,8 @@
 @use '../../styles/abstracts' as *;
 
 .nextMeeting {
+	display: flex;
+	flex-direction: column;
 	padding: 0.5rem;
 
 	h2,
@@ -14,21 +16,36 @@
 		margin-bottom: 0.75rem;
 	}
 
-	.date {
-
-	}
-
 	.time {
-
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+	
+	.date {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: $accent-colour;
+		margin-bottom: 0.5rem;
 	}
 
 	.venue {
-
+		font-size: 1.3rem;
+		font-weight: 500;
 	}
 
 	.postcode {
-
+		font-size: 1rem;
+		font-weight: 600;
+		opacity: 0.8;
+		margin-bottom: 1.25rem;
 	}
 
+	a {
+		background-color: $accent-colour;
+		color: $background-colour-primary;
+		margin-left: auto;
+		padding: 0.65rem 1.15rem;
+		border-radius: 5px;
+	}
 
 }

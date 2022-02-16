@@ -1,4 +1,6 @@
 
+@use '../../styles/abstracts' as *;
+
 .logo {
 	z-index: 3;
 	display: flex;
@@ -15,6 +17,8 @@
 	}
 
 	h1 {
+		font-size: 1.6rem;
 		font-weight: 800;
+		color: $accent-colour;
 	}
 }
