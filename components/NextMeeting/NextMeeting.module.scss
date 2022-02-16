@@ -2,5 +2,33 @@
 @use '../../styles/abstracts' as *;
 
 .nextMeeting {
-	
+	padding: 0.5rem;
+
+	h2,
+	p {
+		margin: 0
+	}
+
+	h2 {
+		font-size: 1.2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.date {
+
+	}
+
+	.time {
+
+	}
+
+	.venue {
+
+	}
+
+	.postcode {
+
+	}
+
+
 }
