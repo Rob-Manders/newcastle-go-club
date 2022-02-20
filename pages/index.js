@@ -1,24 +1,22 @@
 
 import styles from '../styles/Home.module.scss'
+import Image from 'next/image'
 import DocumentHead from '../components/DocumentHead/DocumentHead'
-import Nav from '../components/Nav/Nav'
-import Footer from '../components/Footer/Footer'
+import DefaultLayout from '../layouts/DefaultLayout'
 import NextMeeting from '../components/NextMeeting/NextMeeting'
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <DocumentHead pageTitle='Home' overrideTitle/>
+      <DocumentHead pageTitle='Home' />
 
-      <Nav page='home'/>
-
-
-      <main className={styles.main}>
-        <img className={styles.mainImage} src='images/goclub1.jpg' />
+      <DefaultLayout>
+        <div className={styles.mainImage}>
+          <Image src='/images/goclub1.jpg' layout='fill' objectFit='cover' priority />
+        </div>
         <NextMeeting />
-      </main>
+      </DefaultLayout>
 
-      <Footer />
     </div>
   )
 }

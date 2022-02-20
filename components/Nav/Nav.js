@@ -1,10 +1,10 @@
 
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
 import styles from './Nav.module.scss'
 import Link from 'next/link'
 import Logo from '../Logo/Logo'
 
-export default function Nav({ page }) {
+export default function Nav() {
 	const [menuToggle, setMenuToggle] = useState(false)
 
 	function toggleMenu() {
@@ -27,10 +27,8 @@ export default function Nav({ page }) {
 
 	return (
 		<nav className={styles.nav}>
-			<Link href="/">
-				<Logo />
-			</Link>
-
+			<Logo />
+			
 			<div className={styles.desktopLinks}>
 				<Links />
 			</div>
