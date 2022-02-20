@@ -1,0 +1,19 @@
+
+.adminContainer{
+	padding: 0 0.75rem;
+
+	.adminMenu {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.logoutLink {
+		margin: 0;
+	}
+
+	a,
+	.logoutLink {
+		font-size: 1.3rem;
+		margin: 0.25rem 0;
+	}
+}

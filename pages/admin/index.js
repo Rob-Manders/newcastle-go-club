@@ -1,5 +1,5 @@
 
-import { useContext, useLayoutEffect } from 'react'
+import { useContext } from 'react'
 import styles from '../../styles/admin/Admin.module.scss'
 import Link from 'next/link'
 import useLogout from '../../hooks/useLogout'
@@ -15,6 +15,7 @@ export default function Admin() {
 	function AdminMenu() {
 		return (
 			<div className={styles.adminMenu}>
+				<h2>Admin Menu</h2>
 				<Link href='/admin/meetings'>Meetings</Link>
 				<Link href='/admin/locations'>Locations</Link>
 			</div>
@@ -23,11 +24,13 @@ export default function Admin() {
 
 	return (
 		<div className={styles.container}>
-			<DocumentHead pageTitle='Admin' />
+			<DocumentHead pageTitle='Admin' noIndex />
 			<DefaultLayout>
-				{!loggedIn && <LoginForm />}
-				{loggedIn && accountType === 'admin' && <AdminMenu />}
-				{loggedIn && <p className = {styles.logoutLink} onClick={logout}>Logout</p>}
+				<div className={styles.adminContainer}>
+					{!loggedIn && <LoginForm />}
+					{loggedIn && accountType === 'admin' && <AdminMenu />}
+					{loggedIn && <p className = {styles.logoutLink} onClick={logout}>Logout</p>}
+				</div>
 			</DefaultLayout>
 		</div>
 	)
