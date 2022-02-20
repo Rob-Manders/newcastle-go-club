@@ -38,7 +38,7 @@ export default function LoginForm() {
 	return (
 		<div className={styles.loginForm}>
 			<form onSubmit={login}>
-				<label for='email'>Email Address</label>
+				<label htmlFor='email'>Email Address</label>
 				<input
 					name='email'
 					type='email'
@@ -46,7 +46,7 @@ export default function LoginForm() {
 					onChange={event => setEmail(event.target.value)}
 				/>
 
-				<label for='password'>Password</label>
+				<label htmlFor='password'>Password</label>
 				<input
 					name='password'
 					type='password'
