@@ -1,0 +1,46 @@
+
+@use '../../styles/abstracts' as *;
+
+.loginForm {
+	padding: 0.5rem;
+
+	form {
+		display: flex;
+		flex-direction: column;
+
+		label {
+			font-weight: 600;
+		}
+	
+		input {
+			outline: none;
+			font-size: 1rem;
+			margin: 0.25rem 0;
+			margin-bottom: 0.75rem;
+			padding: 0.5rem 0.65rem;
+			border: none;
+			border-radius: 5px;
+			border-bottom: 2px solid $background-colour-primary;
+
+			&:focus {
+				border-bottom: 2px solid $accent-colour;
+			}
+		}
+	
+		button {
+			all: unset;
+			display: block;
+			text-align: center;
+			background-color: $accent-colour;
+			color: $background-colour-primary;
+			padding: 0.5rem;
+			border-radius: 5px;
+		}
+	}
+
+	.loginMessage {
+		font-weight: 600;
+		color: $warning-colour;
+		margin: 1rem 0.25rem;
+	}
+}
