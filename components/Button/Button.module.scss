@@ -1,0 +1,15 @@
+
+@use '../../styles/abstracts' as *;
+
+.button{
+	display: flex;
+	margin-top: 0.5rem;
+	
+	a {
+		margin-left: auto;
+		background-color: $accent-colour;
+		color: $background-colour-primary;
+		padding: 0.65rem 1.15rem;
+		border-radius: 5px;
+	}
+}

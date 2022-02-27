@@ -5,6 +5,7 @@ import styles from '../../../styles/admin/meetings/Meetings.module.scss'
 import { AuthContext } from '../../../context/AuthContext'
 import DocumentHead from '../../../components/DocumentHead/DocumentHead'
 import DefaultLayout from '../../../layouts/DefaultLayout'
+import AdminMenu from '../../../components/AdminMenu/AdminMenu'
 
 export default function Meetings() {
 	const { loggedIn, accountType } = useContext(AuthContext)
@@ -12,7 +13,7 @@ export default function Meetings() {
 	function MeetingsPage() {
 		return (
 			<div className={styles.meetings}>
-				<Link href='/admin'>Admin</Link>
+				<AdminMenu />
 				Meetings
 			</div>
 		)

@@ -4,15 +4,15 @@ import styles from './Location.module.scss'
 import EditIcon from '../../icons/EditIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
 
-export default function Location() {
-	// const { name, area, postcode } = location
+export default function Location({ location }) {
+	const { name, area, postcode } = location
 
 	return (
 		<div className={styles.location}>
 			<div className={styles.locationDetails}>
-				<h3>The Millstone</h3>
-				<p>South Gosforth</p>
-				<p>NE3 1QL</p>
+				<h3>{name}</h3>
+				<p>{area}</p>
+				<p>{postcode}</p>
 			</div>
 
 			<div className={styles.buttons}>

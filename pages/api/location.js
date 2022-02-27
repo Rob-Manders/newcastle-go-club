@@ -1,7 +1,7 @@
 
 import initCors from '../../utils/initCors'
 import dbConnect from '../../lib/dbConnect'
-import Location from '../../models/Location'
+import LocationModel from '../../models/LocationModel'
 
 const cors = initCors(['POST', 'DELETE'])
 
@@ -20,9 +20,9 @@ export default async function handler(req,res) {
 				})
 			}
 
-			const existingLocation = await Location.findOne({ name })
+			const existingLocation = await LocationModel.findOne({ name })
 			if (existingLocation) {
-				const updatedLocation = await Location.findByIdAndUpdate(existingLocation._id, req.body)
+				const updatedLocation = await LocationModel.findByIdAndUpdate(existingLocation._id, req.body)
 
 				return res.status(200).json({
 					status: 'Success',
@@ -31,7 +31,7 @@ export default async function handler(req,res) {
 				})
 			}
 
-			const newLocation = new Location(req.body)
+			const newLocation = new LocationModel(req.body)
 			const savedLocation = await newLocation.save()
 
 			return res.status(200).json({

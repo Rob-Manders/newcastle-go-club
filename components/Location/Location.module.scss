@@ -4,7 +4,7 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 0.5rem 0;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.185);
+	border-top: 1px solid rgba(0, 0, 0, 0.185);
 
 	.locationDetails {
 		h3 {
@@ -32,7 +32,7 @@
 		}
 	}
 
-	&:last-of-type {
-		border-bottom: none;
+	&:first-of-type {
+		border-top: none;
 	}
 }
