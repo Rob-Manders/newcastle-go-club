@@ -5,6 +5,7 @@ import styles from '../../../styles/admin/locations/Locations.module.scss'
 import { AuthContext } from '../../../context/AuthContext'
 import DocumentHead from '../../../components/DocumentHead/DocumentHead'
 import DefaultLayout from '../../../layouts/DefaultLayout'
+import Location from '../../../components/Location/Location'
 
 export default function Locations() {
 	const { loggedIn, accountType } = useContext(AuthContext)
@@ -13,7 +14,11 @@ export default function Locations() {
 		return (
 			<div className={styles.locations}>
 				<Link href='/admin'>Admin</Link>
-				Locations
+				<h2>Locations</h2>
+				<Location />
+				<Location />
+				<Location />
+				<Location />
 			</div>
 		)
 	}
