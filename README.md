@@ -14,3 +14,4 @@ The new website for the Newcastle Go Club.
 - [bcrypyt](https://github.com/kelektiv/node.bcrypt.js)
 - [cookies-next](https://github.com/andreizanik/cookies-next)
 - [Express CORS Middleware](https://expressjs.com/en/resources/middleware/cors.html)
+- [Material Design Icons](https://materialdesignicons.com/)

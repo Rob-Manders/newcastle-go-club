@@ -1,6 +1,8 @@
 
 import Image from 'next/image'
 import styles from './Location.module.scss'
+import EditIcon from '../../icons/EditIcon'
+import DeleteIcon from '../../icons/DeleteIcon'
 
 export default function Location() {
 	// const { name, area, postcode } = location
@@ -14,13 +16,8 @@ export default function Location() {
 			</div>
 
 			<div className={styles.buttons}>
-				<div className={styles.editButton}>
-					<Image className={styles.editIcon} src='/icons/edit-icon.svg' layout='fill' />
-				</div>
-
-				<div className={styles.deleteButton}>
-					<Image className={styles.deleteIcon} src='/icons/delete-icon.svg' layout='fill' />
-				</div>
+				<EditIcon className={styles.editIcon} />
+				<DeleteIcon className={styles.deleteIcon} />
 			</div>
 		</div>
 	)

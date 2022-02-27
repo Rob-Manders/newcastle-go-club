@@ -2,8 +2,9 @@
 import { useState, forwardRef } from 'react'
 import styles from './Nav.module.scss'
 import Link from 'next/link'
-import Image from 'next/image'
 import Logo from '../Logo/Logo'
+import MenuIcon from '../../icons/MenuIcon'
+import CloseIcon from '../../icons/CloseIcon'
 
 export default function Nav() {
 	const [menuToggle, setMenuToggle] = useState(false)
@@ -38,9 +39,9 @@ export default function Nav() {
 				{
 					!menuToggle
 					?
-					<Image className={styles.menuIcon} src='/icons/menu-icon.svg' layout='fill'/>
+					<MenuIcon className={styles.menuIcon} />
 					:
-					<Image className={styles.menuIconActive}src='/icons/close-icon.svg' layout='fill'/>
+					<CloseIcon className={styles.menuIconActive} />
 				}
 			</div>
 

@@ -18,12 +18,17 @@
 
 	.buttons {
 		display: flex;
-		.editButton,
-		.deleteButton {
+
+		svg {
 			position: relative;
 			width: 2rem;
 			height: 2rem;
 			margin-left: 0.5rem;
+
+			&:hover,
+			&focus {
+				fill: red;
+			}
 		}
 	}
 
