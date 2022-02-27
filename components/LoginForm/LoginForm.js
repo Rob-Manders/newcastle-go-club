@@ -16,7 +16,7 @@ export default function LoginForm() {
 			const response = await fetch('http://localhost:3000/api/auth/login', {
 				method: 'POST',
 				headers: {
-					'COntent-Type': 'application/json'
+					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
 					email,
@@ -44,6 +44,7 @@ export default function LoginForm() {
 					type='email'
 					value={email}
 					onChange={event => setEmail(event.target.value)}
+					required
 				/>
 
 				<label htmlFor='password'>Password</label>
@@ -52,6 +53,7 @@ export default function LoginForm() {
 					type='password'
 					value={password}
 					onChange={event => setPassword(event.target.value)}
+					required
 				/>
 
 				<button type='submit'>Login</button>
