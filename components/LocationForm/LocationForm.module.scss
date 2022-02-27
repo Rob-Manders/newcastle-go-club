@@ -1,4 +1,12 @@
 
+@use '../../styles/abstracts' as *;
+
 .locationForm {
 	padding: 0.5rem;
+
+	.locationMessage {
+		font-weight: 600;
+		color: $warning-colour;
+		margin: 1rem 0.25rem;
+	}
 }

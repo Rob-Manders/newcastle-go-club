@@ -7,6 +7,7 @@ export default function LocationForm() {
 	const [area, setArea] = useState('')
 	const [postcode, setPostcode] = useState('')
 	const [gpsCoord, setGpsCoord] = useState('')
+	const [message, setMessage] = useState('')
 
 	async function submitLocation(event) {
 		event.preventDefault()
@@ -27,9 +28,9 @@ export default function LocationForm() {
 			const { success, message } = await response.json()
 
 			if (success === true) {
-				console.log(message)
+				setMessage(message)
 			} else {
-				console.log(message)
+				setMessage(message)
 			}
 		} catch (error) {
 			console.log('Unable to fetch response from server.')
@@ -76,6 +77,8 @@ export default function LocationForm() {
 
 				<button type='submit'>Submit</button>
 			</form>
+
+			<p className={styles.locationMessage}>{message}</p>
 		</div>
 	)
 }
