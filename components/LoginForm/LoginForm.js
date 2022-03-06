@@ -7,7 +7,7 @@ export default function LoginForm() {
 	const { authCheck } = useContext(AuthContext)
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
-	const [message, setMessage] = useState('Login message test.')
+	const [message, setMessage] = useState('')
 
 	async function login(event) {
 		event.preventDefault()

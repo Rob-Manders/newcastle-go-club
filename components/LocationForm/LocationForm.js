@@ -2,7 +2,7 @@
 import { useState, useContext } from 'react'
 import styles from './LocationForm.module.scss'
 
-export default function LocationForm() {
+export default function LocationForm({ location = {} }) {
 	const [name, setName] = useState('')
 	const [area, setArea] = useState('')
 	const [postcode, setPostcode] = useState('')

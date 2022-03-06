@@ -41,15 +41,36 @@ export default async function handler(req,res) {
 			})
 
 		} catch (error) {
-			return res.status(500)
+			return res.status(500).json(error)
 		}
 	}
 
 	if (req.method === 'DELETE') {
 		try {
-			
+			const { locationId } = req.body
+
+			if (!locationId) {
+				return res.status(400).json({
+					success: false,
+					message: 'Missing location ID.'
+				})
+			}
+
+			const deletedLocation = await LocationModel.deleteOne({ _id: locationId })
+
+			if (deletedLocation) {
+				return res.status(200).json({
+					success: true,
+					message: 'Location deleted.'
+				})
+			} else {
+				return res.status(500).json({
+					success: false,
+					message: 'Fuck.'
+				})
+			}
 		} catch (error) {
-			
+			return res.status(500).json(error)
 		}
 	}
 }
