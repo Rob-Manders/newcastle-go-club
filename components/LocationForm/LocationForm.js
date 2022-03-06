@@ -1,12 +1,20 @@
 
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import styles from './LocationForm.module.scss'
 
-export default function LocationForm({ location = {} }) {
-	const [name, setName] = useState('')
-	const [area, setArea] = useState('')
-	const [postcode, setPostcode] = useState('')
-	const [gpsCoord, setGpsCoord] = useState('')
+const defaultLocation = {
+	_id: null,
+	name: '',
+	area: '',
+	postcode: '',
+	gpsCoord: ''
+}
+
+export default function LocationForm({ editLocation = false, location = defaultLocation }) {
+	const [name, setName] = useState(location.name)
+	const [area, setArea] = useState(location.area)
+	const [postcode, setPostcode] = useState(location.postcode)
+	const [gpsCoord, setGpsCoord] = useState(location.gpsCoord)
 	const [message, setMessage] = useState('')
 
 	async function submitLocation(event) {
@@ -19,10 +27,12 @@ export default function LocationForm({ location = {} }) {
 					'Content-Type': 'application/json'
 				},
 				body: JSON.stringify({
+					_id: location._id,
 					name,
 					area,
 					postcode,
-					gpsCoord
+					gpsCoord,
+					edit: editLocation
 				})
 			})
 			const { success, message } = await response.json()

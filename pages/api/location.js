@@ -11,24 +11,26 @@ export default async function handler(req,res) {
 
 	if (req.method === 'POST') {
 		try {
-			const { name, area, postcode, gpsCoord } = req.body
+			const { _id, name, area, postcode, gpsCoord, edit } = req.body
 
-			if (!name || !area || !postcode || !gpsCoord) {
+			if (!name || !area || !postcode || !gpsCoord || !edit) {
 				return res.status(400).json({
 					success: false,
 					message: 'Missing required fields.'
 				})
 			}
 
-			const existingLocation = await LocationModel.findOne({ name })
-			if (existingLocation) {
-				const updatedLocation = await LocationModel.findByIdAndUpdate(existingLocation._id, req.body)
-
-				return res.status(200).json({
-					status: 'Success',
-					message: `${updatedLocation.name} succesfully updated.`,
-					updatedLocation
-				})
+			if (edit === true) {
+				const existingLocation = await LocationModel.findOne({ _id: _id })
+				if (existingLocation) {
+					const updatedLocation = await LocationModel.findByIdAndUpdate(existingLocation._id, req.body)
+	
+					return res.status(200).json({
+						status: 'Success',
+						message: `${updatedLocation.name} succesfully updated.`,
+						updatedLocation
+					})
+				}
 			}
 
 			const newLocation = new LocationModel(req.body)

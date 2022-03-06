@@ -1,9 +1,11 @@
 
+import { Router, useRouter } from 'next/router'
 import styles from './Location.module.scss'
 import EditIcon from '../../icons/EditIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
 
 export default function Location({ location }) {
+	const router = useRouter()
 	const { _id, name, area, postcode } = location
 
 	async function deleteLocation() {
@@ -35,7 +37,7 @@ export default function Location({ location }) {
 			</div>
 
 			<div className={styles.buttons}>
-				<EditIcon className={styles.editIcon} />
+				<EditIcon className={styles.editIcon} action={() => router.push(`/admin/locations/${_id}`)}/>
 				<DeleteIcon className={styles.deleteIcon} action={deleteLocation} />
 			</div>
 		</div>
