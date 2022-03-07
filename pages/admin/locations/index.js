@@ -2,7 +2,6 @@
 import { useContext } from 'react'
 import dbConnect from '../../../lib/dbConnect'
 import LocationModel from '../../../models/LocationModel'
-import Link from 'next/link'
 import styles from '../../../styles/admin/locations/Locations.module.scss'
 import { AuthContext } from '../../../context/AuthContext'
 import DocumentHead from '../../../components/DocumentHead/DocumentHead'

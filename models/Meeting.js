@@ -8,10 +8,6 @@ const MeetingSchema = new mongoose.Schema({
 	},
 	locationId: {
 		required: true
-	},
-	notes: {
-		types: String,
-		required: false
 	}
 })
 

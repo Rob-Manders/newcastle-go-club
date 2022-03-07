@@ -1,0 +1,12 @@
+
+@use '../../styles/abstracts' as *;
+
+.meetingForm {
+	padding: 0.5rem 0;
+
+	.meetingMessage {
+		font-weight: 600;
+		color: $warning-colour;
+		margin: 1rem 0.25rem;
+	}
+}
