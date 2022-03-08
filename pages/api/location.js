@@ -13,7 +13,7 @@ export default async function handler(req,res) {
 		try {
 			const { _id, name, area, postcode, gpsCoord, edit } = req.body
 
-			if (!name || !area || !postcode || !gpsCoord || !edit) {
+			if (!name || !area || !postcode || !gpsCoord) {
 				return res.status(400).json({
 					success: false,
 					message: 'Missing required fields.'
@@ -23,21 +23,31 @@ export default async function handler(req,res) {
 			if (edit === true) {
 				const existingLocation = await LocationModel.findOne({ _id: _id })
 				if (existingLocation) {
-					const updatedLocation = await LocationModel.findByIdAndUpdate(existingLocation._id, req.body)
+					const updatedLocation = await LocationModel.findByIdAndUpdate(existingLocation._id, {
+						name,
+						area,
+						postcode,
+						gpsCoord
+					})
 	
 					return res.status(200).json({
-						status: 'Success',
+						success: true,
 						message: `${updatedLocation.name} succesfully updated.`,
 						updatedLocation
 					})
 				}
 			}
 
-			const newLocation = new LocationModel(req.body)
+			const newLocation = new LocationModel({
+				name,
+				area,
+				postcode,
+				gpsCoord
+			})
 			const savedLocation = await newLocation.save()
 
 			return res.status(200).json({
-				status: 'Success',
+				success: true,
 				message: `${savedLocation.name} created successfully.`,
 				savedLocation
 			})
@@ -68,7 +78,7 @@ export default async function handler(req,res) {
 			} else {
 				return res.status(500).json({
 					success: false,
-					message: 'Fuck.'
+					message: 'UNable to delete location.'
 				})
 			}
 		} catch (error) {

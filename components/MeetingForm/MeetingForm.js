@@ -9,7 +9,7 @@ const defaultMeeting = {
 	locationId: null,
 }
 
-export default function MeetingForm({ locations, editMeeting = false, meeting = defaultMeeting }) {
+export default function MeetingForm({ locations, edit = false, meeting = defaultMeeting }) {
 	const [date, setDate] = useState(meeting.date)
 	const [time, setTime] = useState(meeting.time)
 	const [locationId, setLocationId] = useState(meeting.locationId)
@@ -30,7 +30,7 @@ export default function MeetingForm({ locations, editMeeting = false, meeting = 
 					_id: meeting._id,
 					date: dateTime,
 					locationId,
-					editMeeting
+					edit
 				})
 			})
 			const { success, message } = await response.json()

@@ -7,8 +7,9 @@ const MeetingSchema = new mongoose.Schema({
 		required: true
 	},
 	locationId: {
+		type: String,
 		required: true
 	}
 })
 
-export default mongoose.models.Meeting || mongoose.model('Meeting', MeetingSchema)
+export default mongoose.models.MeetingModel || mongoose.model('MeetingModel', MeetingSchema)
