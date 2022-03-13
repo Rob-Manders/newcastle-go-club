@@ -11,6 +11,7 @@ import Button from '../../../components/Button/Button'
 import AdminMenu from '../../../components/AdminMenu/AdminMenu'
 
 export default function Locations({ locations }) {
+	console.log(locations)
 	const { loggedIn, accountType } = useContext(AuthContext)
 
 	function LocationsPage() {

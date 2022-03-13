@@ -1,5 +1,5 @@
 
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import styles from './Location.module.scss'
 import EditIcon from '../../icons/EditIcon'
 import DeleteIcon from '../../icons/DeleteIcon'

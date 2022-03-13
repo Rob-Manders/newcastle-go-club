@@ -3,7 +3,11 @@ import mongoose from 'mongoose'
 
 const MeetingSchema = new mongoose.Schema({
 	date: {
-		type: Date,
+		type: String,
+		required: true
+	},
+	time: {
+		type: String,
 		required: true
 	},
 	locationId: {

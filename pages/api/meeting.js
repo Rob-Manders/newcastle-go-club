@@ -11,9 +11,9 @@ export default async function handler(req, res) {
 
 	if (req.method === 'POST') {
 		try {
-			const { _id, date, locationId, edit } = req.body
+			const { _id, date, time, locationId, edit } = req.body
 
-			if (!date || !locationId) {
+			if (!date || !time || !locationId) {
 				return res.status(400).json({
 					success: false,
 					message: 'Missing required fields.'
@@ -25,6 +25,7 @@ export default async function handler(req, res) {
 				if (existingMeeting) {
 					const updatedMeeting = await MeetingModel.findByIdAndUpdate(existingMeeting._id, {
 						date,
+						time,
 						locationId
 					})
 
@@ -38,6 +39,7 @@ export default async function handler(req, res) {
 
 			const newMeeting = new MeetingModel({
 				date,
+				time,
 				locationId
 			})
 			const savedMeeting = await newMeeting.save()
@@ -55,16 +57,16 @@ export default async function handler(req, res) {
 		try {
 			const { meetingId } = req.body
 
-			if (!locationId) {
+			if (!meetingId) {
 				return res.status(400).json({
 					success: false,
 					message: 'Missing meeting ID.'
 				})
 			}
 
-			const deletedMeeting = MeetingModel.deleteOne({ _id: _id })
+			const deletedMeeting = MeetingModel.deleteOne({ _id: meetingId })
 
-			if (deletedLocation) {
+			if (deletedMeeting) {
 				return res.status(200).json({
 					success: true,
 					message: 'Meeting deleted.'

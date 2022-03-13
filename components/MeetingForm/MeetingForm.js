@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './MeetingForm.module.scss'
 
 const defaultMeeting = {
@@ -15,10 +15,12 @@ export default function MeetingForm({ locations, edit = false, meeting = default
 	const [locationId, setLocationId] = useState(meeting.locationId)
 	const [message, setMessage] = useState('')
 
+	useEffect(() => {
+		setLocationId(locations[0])
+	}, [])
+
 	async function submitMeeting(event) {
 		event.preventDefault()
-
-		const dateTime = new Date(`${date} ${time}`)
 
 		try {
 			const response = await fetch('http://localhost:3000/api/meeting', {
@@ -28,7 +30,8 @@ export default function MeetingForm({ locations, edit = false, meeting = default
 				},
 				body: JSON.stringify({
 					_id: meeting._id,
-					date: dateTime,
+					date,
+					time,
 					locationId,
 					edit
 				})
