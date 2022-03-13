@@ -35,7 +35,8 @@ export default function Meeting({ meeting, location }) {
 	return(
 		<div className={styles.meeting}>
 			<div className={styles.meetingDetails}>
-				<h3>{parseDate(date)} {time}</h3>
+				<h3>{parseDate(date)}</h3>
+				<p className={styles.time}>{time}</p>
 				<p>{location.name}</p>
 			</div>
 
