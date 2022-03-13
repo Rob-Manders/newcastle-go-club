@@ -1,11 +1,13 @@
 
 import { useRouter } from 'next/router'
 import styles from './Meeting.module.scss'
+import useParseDate from '../../hooks/useParseDate'
 import EditIcon from '../../icons/EditIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
 
 export default function Meeting({ meeting, location }) {
 	const router = useRouter()
+	const parseDate = useParseDate()
 	const { _id, date, time } = meeting
 	
 	async function deleteMeeting() {
@@ -19,9 +21,11 @@ export default function Meeting({ meeting, location }) {
 					meetingId: _id
 				})
 			})
-			const { success } = await response.json()
+			const { success, message } = await response.json()
 			if (success === true) {
 				window.location.reload(false)
+			} else {
+				console.log(message)
 			}
 		} catch (error) {
 			console.log(error)
@@ -31,12 +35,12 @@ export default function Meeting({ meeting, location }) {
 	return(
 		<div className={styles.meeting}>
 			<div className={styles.meetingDetails}>
-				<h3>{date} / {time}</h3>
+				<h3>{parseDate(date)} {time}</h3>
 				<p>{location.name}</p>
 			</div>
 
 			<div className={styles.buttons}>
-				<EditIcon className={styles.editIcon} action={() => router.push(`/admin/meetings`)} />
+				<EditIcon className={styles.editIcon} action={() => router.push(`/admin/meetings/${_id}`)} />
 				<DeleteIcon className={styles.deleteIcon} action={deleteMeeting} />
 			</div>
 		</div>

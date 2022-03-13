@@ -9,6 +9,7 @@ import Meeting from '../../../components/Meeting/Meeting'
 import dbConnect from '../../../lib/dbConnect'
 import MeetingModel from '../../../models/MeetingModel'
 import LocationModel from '../../../models/LocationModel'
+import Button from '../../../components/Button/Button'
 
 export default function Meetings({ meetings, locations }) {
 	const { loggedIn, accountType } = useContext(AuthContext)
@@ -34,6 +35,7 @@ export default function Meetings({ meetings, locations }) {
 						})
 					}
 				</div>
+				<Button href='/admin/meetings/create'>Add Meeting</Button>
 			</div>
 		)
 	}

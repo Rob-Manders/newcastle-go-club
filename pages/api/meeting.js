@@ -11,7 +11,7 @@ export default async function handler(req, res) {
 
 	if (req.method === 'POST') {
 		try {
-			const { _id, date, time, locationId, edit } = req.body
+			const { _id, date, time, locationId, editMeeting } = req.body
 
 			if (!date || !time || !locationId) {
 				return res.status(400).json({
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 				})
 			}
 
-			if (edit === true) {
+			if (editMeeting === true) {
 				const existingMeeting = await MeetingModel.findOne({ _id: _id })
 				if (existingMeeting) {
 					const updatedMeeting = await MeetingModel.findByIdAndUpdate(existingMeeting._id, {
@@ -64,7 +64,7 @@ export default async function handler(req, res) {
 				})
 			}
 
-			const deletedMeeting = MeetingModel.deleteOne({ _id: meetingId })
+			const deletedMeeting = await MeetingModel.deleteOne({ _id: meetingId })
 
 			if (deletedMeeting) {
 				return res.status(200).json({
@@ -74,7 +74,7 @@ export default async function handler(req, res) {
 			} else {
 				return res.status(500).json({
 					success: false,
-					message: 'UNable to delete meeting.'
+					message: 'Unable to delete meeting.'
 				})
 			}
 		} catch (error) {

@@ -9,14 +9,14 @@ const defaultMeeting = {
 	locationId: null,
 }
 
-export default function MeetingForm({ locations, edit = false, meeting = defaultMeeting }) {
+export default function MeetingForm({ locations, editMeeting = false, meeting = defaultMeeting }) {
 	const [date, setDate] = useState(meeting.date)
 	const [time, setTime] = useState(meeting.time)
 	const [locationId, setLocationId] = useState(meeting.locationId)
 	const [message, setMessage] = useState('')
 
 	useEffect(() => {
-		setLocationId(locations[0])
+		if (!locationId) setLocationId(locations[0])
 	}, [])
 
 	async function submitMeeting(event) {
@@ -33,7 +33,7 @@ export default function MeetingForm({ locations, edit = false, meeting = default
 					date,
 					time,
 					locationId,
-					edit
+					editMeeting
 				})
 			})
 			const { success, message } = await response.json()
