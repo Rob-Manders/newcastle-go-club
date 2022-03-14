@@ -53,7 +53,7 @@ export default function Meetings({ meetings, locations }) {
 export async function getServerSideProps() {
 	await dbConnect()
 
-	const meetingsResult = await MeetingModel.find({})
+	const meetingsResult = await MeetingModel.find({}, 'date time locationId')
 	const meetings = meetingsResult.map(document => {
 		const meeting = document.toObject()
 		meeting._id = meeting._id.toString()

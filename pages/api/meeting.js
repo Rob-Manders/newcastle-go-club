@@ -20,13 +20,16 @@ export default async function handler(req, res) {
 				})
 			}
 
+			const expiryDate = new Date(`${date} ${time}`)
+
 			if (editMeeting === true) {
 				const existingMeeting = await MeetingModel.findOne({ _id: _id })
 				if (existingMeeting) {
 					const updatedMeeting = await MeetingModel.findByIdAndUpdate(existingMeeting._id, {
 						date,
 						time,
-						locationId
+						locationId,
+						expireAt: expiryDate
 					})
 
 					return res.status(200).json({
@@ -40,7 +43,8 @@ export default async function handler(req, res) {
 			const newMeeting = new MeetingModel({
 				date,
 				time,
-				locationId
+				locationId,
+				expireAt: expiryDate
 			})
 			const savedMeeting = await newMeeting.save()
 

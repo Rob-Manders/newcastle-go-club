@@ -13,7 +13,14 @@ const MeetingSchema = new mongoose.Schema({
 	locationId: {
 		type: String,
 		required: true
+	},
+	expireAt: {
+		type: Date,
+		expires: 60,
+		required: true
 	}
+}, {
+	timestamps: true
 })
 
 export default mongoose.models.MeetingModel || mongoose.model('MeetingModel', MeetingSchema)
