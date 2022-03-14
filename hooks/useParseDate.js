@@ -3,7 +3,7 @@ export default function useParseDate() {
 	const days = [
 		'Sunday',
 		'Monday',
-		'Tueaday',
+		'Tuesday',
 		'Wednesday',
 		'Thursday',
 		'Friday',
