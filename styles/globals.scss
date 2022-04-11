@@ -13,7 +13,12 @@ body {
 
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $accent-colour;
+  }
 }
 
 *,

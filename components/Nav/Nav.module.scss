@@ -7,6 +7,10 @@
 	align-items: center;
 	justify-content: space-between;
 
+	a {
+		text-decoration: none;
+	}
+
 	.desktopLinks {
 		display: none;
 		padding: 0.5rem;
@@ -19,6 +23,7 @@
 
 			&:hover,
 			&:focus {
+				color: black;
 				border-bottom: 3px solid $accent-colour;
 			}
 		}

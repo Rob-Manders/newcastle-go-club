@@ -57,13 +57,13 @@ export default function NextMeeting({ meetings, locations }) {
 				<p className={styles.venue}>{location.name}, {location.area}</p>
 				<p className={styles.postcode}>{location.postcode}</p>
 
+				<Button href='/meetings'>View Schedule</Button>
 			</div>
 
 			<div className={styles.mapContainer}>
 				<Map mapsApiKey='AIzaSyDELpcbkMle2OUpJwR-vKKLFWh4NRP9Fro' gpsCoord={location.gpsCoord}/>
 			</div>
 			
-			<Button href='/meetings'>View Schedule</Button>
 		</section>
 	)
 }

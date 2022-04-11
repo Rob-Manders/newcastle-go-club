@@ -7,6 +7,9 @@
 
 	.container {
 		padding: 0.5rem;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
 	
 		h2,
 		p {
@@ -39,16 +42,39 @@
 			font-size: 1rem;
 			font-weight: 600;
 			opacity: 0.8;
-			margin-bottom: 0.75rem;
+			margin-bottom: auto;
 		}
 	}
 	
 	.mapContainer {
-		height: 180px;
+		height: 280px;
 	}
 
 	// Button margin.
 	a {
 		margin-right: 0.5rem;
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		flex-direction: row;
+		margin: 1rem 0.5rem 0.5rem;
+		background-color: $background-colour-section;
+		border-radius: $border-radius;
+		box-shadow: $box-shadow;
+		overflow: hidden;
+		min-height: 250px;
+		
+		.container,
+		.mapContainer {
+			width: 50%;
+		}
+
+		.container {
+			padding: 0.754rem;
+		}
+
+		.mapContainer {
+			height: unset;
+		}
 	}
 }

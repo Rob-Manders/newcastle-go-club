@@ -32,7 +32,7 @@ export default function CreateMeeting({ meeting, locations }) {
 export async function getServerSideProps({ params }) {
 	await dbConnect()
 
-	const meeting = await MeetingModel.findById(params.id).lean()
+	const meeting = await MeetingModel.findById(params.id, 'date time locationId').lean()
 	meeting._id = meeting._id.toString()
 
 	const result = await LocationModel.find({})
