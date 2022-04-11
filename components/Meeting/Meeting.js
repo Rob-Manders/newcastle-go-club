@@ -12,7 +12,7 @@ export default function Meeting({ meeting, location }) {
 	
 	async function deleteMeeting() {
 		try {
-			const response = await fetch('http://localhost:3000/api/meeting', {
+			const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/meeting', {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json'

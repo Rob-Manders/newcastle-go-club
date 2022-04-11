@@ -10,7 +10,7 @@ export default function Location({ location }) {
 
 	async function deleteLocation() {
 		try {
-			const response = await fetch('http://localhost:3000/api/location', {
+			const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/location', {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json'

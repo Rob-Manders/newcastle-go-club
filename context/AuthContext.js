@@ -8,7 +8,7 @@ export default function AuthContextProvider({ children }) {
 	const [ accountType, setAccountType ] = useState('none')
 
 	async function authCheck() {
-		const response = await fetch(`http://localhost:3000/api/auth/loggedin`, {
+		const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/loggedin`, {
 			method: 'GET',
 			credentials: 'same-origin'
 		})
