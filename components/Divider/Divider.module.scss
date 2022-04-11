@@ -1,4 +1,6 @@
 
+@use '../../styles/abstracts' as *;
+
 .divider {
 	padding: 0.5rem;
 
@@ -8,5 +10,9 @@
 		height: 1px;
 		background: black;
 		opacity: 0.35;
+	}
+
+	@media (min-width: $breakpoint-tablet) {
+		display: none;
 	}
 }
