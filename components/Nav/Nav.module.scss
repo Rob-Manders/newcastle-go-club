@@ -9,12 +9,21 @@
 
 	.desktopLinks {
 		display: none;
+		padding: 0.5rem;
 
 		a {
-			
+			font-size: 1.15rem;
+			font-weight: 500;
+			margin: 0 0.75rem;
+			padding: 0.25rem 0;
+
+			&:hover,
+			&:focus {
+				border-bottom: 3px solid $accent-colour;
+			}
 		}
 	
-		@media (min-width: $breakpoint-mobile) {
+		@media (min-width: $breakpoint-mobile-nav) {
 			display: block;
 		}
 	}
@@ -46,7 +55,7 @@
 			}
 		}
 
-		@media (min-width: $breakpoint-mobile) {
+		@media (min-width: $breakpoint-mobile-nav) {
 			display: none;
 		}
 	}
@@ -71,7 +80,7 @@
 			width: 100%;
 		}
 
-		@media (min-width: $breakpoint-mobile) {
+		@media (min-width: $breakpoint-mobile-nav) {
 			display: none;
 		}
 	}
