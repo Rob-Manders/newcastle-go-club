@@ -4,6 +4,9 @@ import Image from 'next/image'
 import DocumentHead from '../components/DocumentHead/DocumentHead'
 import DefaultLayout from '../layouts/DefaultLayout'
 import NextMeeting from '../components/NextMeeting/NextMeeting'
+import Section from '../components/Section/Section'
+import WelcomeSection from '../components/WelcomeSection/WelcomeSection'
+import Divider from '../components/Divider/Divider'
 import dbConnect from '../lib/dbConnect'
 import MeetingModel from '../models/MeetingModel'
 import LocationModel from '../models/LocationModel'
@@ -14,12 +17,16 @@ export default function Home({ meetings, locations }) {
       <DocumentHead pageTitle='Home' />
 
       <DefaultLayout>
-        <div className={styles.mainImage}>
+        {/* <div className={styles.mainImage}>
           <Image src='/images/goclub1.jpg' layout='fill' objectFit='cover' priority />
         </div>
+				<Section label='welcome'>
+					<h2>Welcome to Newcastle Go Club</h2>
+				</Section> */}
+				<WelcomeSection />
+				<Divider />
         <NextMeeting meetings={meetings} locations={locations} />
       </DefaultLayout>
-
     </div>
   )
 }

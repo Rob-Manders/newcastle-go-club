@@ -1,0 +1,28 @@
+
+
+.welcomeSection {
+	.mainImage {
+		position: relative;
+		width: 100vw;
+		height: 180px;
+	}
+	
+	.welcomeText {
+		padding: 0.5rem 0.5rem 0;
+
+		p {
+			margin: 0.75rem 0;
+		}
+
+		h2 {
+			margin-top: 0;
+		}
+
+		.subHeader{
+			font-size: 1rem;
+			font-weight: 600;
+			opacity: 0.8;
+			margin: 0;
+		}
+	}
+}
