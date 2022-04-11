@@ -12,7 +12,7 @@ export default function NextMeeting({ meetings, locations }) {
 		name: 'TBC',
 		area: 'Newcastle upon Tyne',
 		postcode: 'TBC',
-		cpsCoord: '54.98226216073709,-1.6170193570421796'
+		gpsCoord: '54.98226216073709,-1.6170193570421796'
 	})
 	
 	function findLocation(locationId) {
