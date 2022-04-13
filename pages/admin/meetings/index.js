@@ -5,7 +5,7 @@ import { AuthContext } from '../../../context/AuthContext'
 import DocumentHead from '../../../components/DocumentHead/DocumentHead'
 import DefaultLayout from '../../../layouts/DefaultLayout'
 import AdminMenu from '../../../components/AdminMenu/AdminMenu'
-import Meeting from '../../../components/Meeting/Meeting'
+import MeetingAdmin from '../../../components/MeetingAdmin/MeetingAdmin'
 import dbConnect from '../../../lib/dbConnect'
 import MeetingModel from '../../../models/MeetingModel'
 import LocationModel from '../../../models/LocationModel'
@@ -30,7 +30,7 @@ export default function Meetings({ meetings, locations }) {
 								}
 							})
 							return (
-								<Meeting key={meeting._id} meeting={meeting} location={meetingLocation} />
+								<MeetingAdmin key={meeting._id} meeting={meeting} location={meetingLocation} />
 							)
 						})
 					}

@@ -9,7 +9,7 @@ export default function useLogout() {
 		if (!loggedIn) return
 
 		try {
-			const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/auth/logout', {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/logout`, {
 				method: 'GET',
 			})
 			const { success } = await response.json()

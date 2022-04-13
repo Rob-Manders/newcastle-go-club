@@ -21,7 +21,7 @@ export default function LocationForm({ editLocation = false, location = defaultL
 		event.preventDefault()
 
 		try {
-			const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/location', {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/location`, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

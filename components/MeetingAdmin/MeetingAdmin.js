@@ -1,18 +1,18 @@
 
 import { useRouter } from 'next/router'
-import styles from './Meeting.module.scss'
+import styles from './MeetingAdmin.module.scss'
 import useParseDate from '../../hooks/useParseDate'
 import EditIcon from '../../icons/EditIcon'
 import DeleteIcon from '../../icons/DeleteIcon'
 
-export default function Meeting({ meeting, location }) {
+export default function MeetingAdmin({ meeting, location }) {
 	const router = useRouter()
 	const parseDate = useParseDate()
 	const { _id, date, time } = meeting
 	
 	async function deleteMeeting() {
 		try {
-			const response = await fetch('${process.env.NEXT_PUBLIC_API_URL}/meeting', {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/meeting`, {
 				method: 'DELETE',
 				headers: {
 					'Content-Type': 'application/json'
