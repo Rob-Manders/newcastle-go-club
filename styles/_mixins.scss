@@ -1,0 +1,12 @@
+
+@use './abstracts' as *;
+
+@mixin desktop-content-box {
+	margin: 0.5rem;
+	padding: 0.25rem;
+	min-height: 250px;
+	background-color: $background-colour-section;
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	overflow: hidden;
+}

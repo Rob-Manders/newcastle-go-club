@@ -1,4 +1,17 @@
 
+@use '../../styles/abstracts' as *;
+@use '../../styles/mixins' as *;
+
 .section {
-	padding: 0 0.5rem;
+	padding: 0.5rem;
+
+	@media (min-width: $breakpoint-tablet) {
+		@include desktop-content-box;
+
+		h2,
+		p {
+			margin: 0.5rem;
+			margin-bottom: 0.75rem;
+		}
+	}
 }

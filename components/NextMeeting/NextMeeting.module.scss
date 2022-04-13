@@ -1,5 +1,6 @@
 
 @use '../../styles/abstracts' as *;
+@use '../../styles/mixins' as *;
 
 .nextMeeting {
 	display: flex;
@@ -56,13 +57,9 @@
 	}
 
 	@media (min-width: $breakpoint-tablet) {
+		@include desktop-content-box;
+		
 		flex-direction: row;
-		margin: 1rem 0.5rem 0.5rem;
-		background-color: $background-colour-section;
-		border-radius: $border-radius;
-		box-shadow: $box-shadow;
-		overflow: hidden;
-		min-height: 250px;
 		
 		.container,
 		.mapContainer {

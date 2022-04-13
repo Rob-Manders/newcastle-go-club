@@ -1,5 +1,6 @@
 
 @use '../../styles/abstracts' as *;
+@use '../../styles/mixins' as *;
 
 .welcomeSection {
 	.mainImage {
@@ -29,12 +30,8 @@
 
 	@media (min-width: $breakpoint-tablet) {
 		display: flex;
-		margin: 0.5rem;
-		min-height: 250px;
-		background-color: $background-colour-section;
-		border-radius: $border-radius;
-		box-shadow: $box-shadow;
-		overflow: hidden;
+
+		@include desktop-content-box;
 
 		.mainImage {
 			order: 2;
