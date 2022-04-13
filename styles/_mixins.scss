@@ -3,7 +3,7 @@
 
 @mixin desktop-content-box {
 	margin: 0.5rem;
-	padding: 0.25rem;
+	margin-bottom: 0.75rem;
 	min-height: 250px;
 	background-color: $background-colour-section;
 	border-radius: $border-radius;

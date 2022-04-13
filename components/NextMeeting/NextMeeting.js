@@ -5,7 +5,7 @@ import useParseDate from '../../hooks/useParseDate'
 import Map from '../Map/Map'
 import Button from '../../components/Button/Button'
 
-export default function NextMeeting({ meetings, locations }) {
+export default function NextMeeting({ hideButton = false, meetings, locations }) {
 	const parseDate = useParseDate()
 	const [meeting, setMeeting] = useState({})
 	const [location, setLocation] = useState({
@@ -57,11 +57,11 @@ export default function NextMeeting({ meetings, locations }) {
 				<p className={styles.venue}>{location.name}, {location.area}</p>
 				<p className={styles.postcode}>{location.postcode}</p>
 
-				<Button href='/meetings'>View Schedule</Button>
+				{!hideButton && <Button href='/meetings'>View Schedule</Button>}
 			</div>
 
 			<div className={styles.mapContainer}>
-				<Map mapsApiKey='AIzaSyDELpcbkMle2OUpJwR-vKKLFWh4NRP9Fro' gpsCoord={location.gpsCoord}/>
+				<Map gpsCoord={location.gpsCoord}/>
 			</div>
 			
 		</section>
