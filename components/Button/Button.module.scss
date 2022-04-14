@@ -12,5 +12,12 @@
 		padding: 0.65rem 1.15rem;
 		border-radius: 5px;
 		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			background-color: $hover-colour;
+			color: black;
+			font-weight: 500;
+		}
 	}
 }

@@ -1,0 +1,13 @@
+
+.meeting {
+	display: flex;
+	border-top: 1px solid rgba(0, 0, 0, 0.185);
+	
+	div {
+		width: 50%;
+	}
+
+	&:first-of-type {
+		border-top: none;
+	}
+}
