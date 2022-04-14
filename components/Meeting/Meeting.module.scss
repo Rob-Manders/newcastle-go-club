@@ -1,10 +1,51 @@
 
+@use '../../styles/abstracts' as *;
+
 .meeting {
 	display: flex;
+	margin: 0.75rem;
+	padding-top: 0.25rem;
 	border-top: 1px solid rgba(0, 0, 0, 0.185);
 	
-	div {
+	.dateTime,
+	.location {
 		width: 50%;
+	}
+
+	h3,
+	p {
+		margin: 0;
+		margin-top: 0.25rem;
+	}
+
+	.time {
+		font-size: 1.25rem;
+		font-weight: 500;
+		margin-bottom: 0.25rem;
+	}
+
+	.date {
+		font-size: 1.4rem;
+		font-weight: 700;
+		color: $accent-colour;
+		margin-top: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	.venue {
+		font-size: 1.3rem;
+		font-weight: 600;
+	}
+
+	.area {
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
+	.postcode {
+		font-size: 1rem;
+		font-weight: 600;
+		opacity: 0.8;
 	}
 
 	&:first-of-type {

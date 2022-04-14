@@ -10,12 +10,12 @@ export default function Meeting({ meeting, location }) {
 		<div className={styles.meeting}>
 			<div className={styles.dateTime}>
 				<p className={styles.time}>{time}</p>
-				<h3>{parseDate(date)}</h3>
+				<h3 className={styles.date}>{parseDate(date)}</h3>
 			</div>
 			<div className={styles.location}>
-				<p>{location.name}</p>
-				<p>{location.area}</p>
-				<p>{location.postcode}</p>
+				<p className={styles.venue}>{location.name}</p>
+				<p className={styles.area}>{location.area}</p>
+				<p className={styles.postcode}>{location.postcode}</p>
 			</div>
 		</div>
 	)

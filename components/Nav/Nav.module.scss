@@ -26,6 +26,10 @@
 				color: black;
 				border-bottom: 3px solid $accent-colour;
 			}
+
+			&:last-of-type {
+				margin-right: 0;
+			}
 		}
 	
 		@media (min-width: $breakpoint-mobile-nav) {
