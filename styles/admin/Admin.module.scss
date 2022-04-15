@@ -1,6 +1,13 @@
 
+.container {
+	max-width: 950px;
+	margin: 0 auto;
+}
+
 .adminContainer{
 	padding: 0 0.75rem;
+	max-width: 600px;
+	margin: 0 auto;
 
 	.adminMenu {
 		display: flex;

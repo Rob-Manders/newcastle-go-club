@@ -1,11 +1,19 @@
 
+.container {
+	max-width: 950px;
+	margin: 0 auto;
+}
+
 .locations {
 	display: flex;
 	flex-direction: column;
 	padding: 0.5rem;
-
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 .createLocation {
 	padding: 0.5rem;
+	max-width: 600px;
+	margin: 0 auto;
 }

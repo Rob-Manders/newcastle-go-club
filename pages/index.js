@@ -11,7 +11,7 @@ import LocationModel from '../models/LocationModel'
 
 export default function Home({ meetings, locations }) {
   return (
-    <div className={styles.container}>
+		<div className={styles.container}>
       <DocumentHead pageTitle='Home' />
 
       <DefaultLayout>
