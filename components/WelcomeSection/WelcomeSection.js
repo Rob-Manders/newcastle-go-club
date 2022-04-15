@@ -14,7 +14,7 @@ export default function WelcomeSection() {
 				<h2>Newcastle Go Club</h2>
 
 				<p>We are a group of like-minded people who love to play the amazing game of Go.</p>
-				<p>We are an inclusive group open to all players, new or old, regardless of skill level. If you're new to Go, we would love to teach you how to play.</p>
+				<p>We are an inclusive group open to all players, new or old, regardless of skill level. If you are new to Go, we would love to teach you how to play.</p>
 				<p>You can see below where and when we will next be meeting, so feel free to come along.</p>
 			</div>
 		</section>

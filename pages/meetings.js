@@ -24,7 +24,9 @@ export default function Meetings({ meetings, locations }) {
 		})
 	}
 
-	useEffect(() => sortMeetings(), [])
+	useEffect(() => {
+		sortMeetings()
+	}, [])
 
   return (
     <div className={styles.container}>
